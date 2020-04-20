@@ -20,6 +20,8 @@ class MovieInfoViewController: UIViewController {
     @IBOutlet weak var youtubeLink: UIImageView!
     @IBOutlet weak var primeLink: UIImageView!
     @IBOutlet weak var netflixLink: UIImageView!
+    @IBOutlet weak var actorName: UITextView!
+    @IBOutlet weak var huluLink: UIImageView!
     @IBOutlet weak var movieDetail: UITextView!
     
     override func viewDidLoad() {
@@ -28,6 +30,7 @@ class MovieInfoViewController: UIViewController {
 
         movieName.text = movieInfo.movieName
         movieRate.text = movieInfo.movieRate
+        actorName.text = movieInfo.actorName
         movieDetail.text = movieInfo.movieDetail
         let tempImage = UIImage(named: movieInfo.movieImageName)
         if tempImage != nil {
@@ -38,6 +41,7 @@ class MovieInfoViewController: UIViewController {
         var youtubeGesture:UITapGestureRecognizer?
         var primeGesture:UITapGestureRecognizer?
         var netflixGesture:UITapGestureRecognizer?
+        var huluGesture:UITapGestureRecognizer?
         
         if movieInfo.imdbLink != nil {
             imdbGesture = UITapGestureRecognizer(target: self, action: #selector(MovieInfoViewController.imdbTapped(gesture:)))
@@ -53,23 +57,29 @@ class MovieInfoViewController: UIViewController {
             youtubeLink.isUserInteractionEnabled = true
         }
         
-        if movieInfo.primeLink == nil {
-            movieLink.arrangedSubviews[1].isHidden = true
-        } else {
-            primeGesture = UITapGestureRecognizer(target: self, action: #selector(MovieInfoViewController.primeTapped(gesture:)))
-            primeLink.addGestureRecognizer(primeGesture!)
-            primeLink.isUserInteractionEnabled = true
-        }
-        
         if movieInfo.netflixLink == nil {
-            movieLink.arrangedSubviews[2].isHidden = true
+            movieLink.arrangedSubviews[1].isHidden = true
         } else {
             netflixGesture = UITapGestureRecognizer(target: self, action: #selector(MovieInfoViewController.netflixTapped(gesture:)))
             netflixLink.addGestureRecognizer(netflixGesture!)
             netflixLink.isUserInteractionEnabled = true
         }
         
+        if movieInfo.huluLink == nil {
+            movieLink.arrangedSubviews[2].isHidden = true
+        } else {
+            huluGesture = UITapGestureRecognizer(target: self, action: #selector(MovieInfoViewController.huluTapped(gesture:)))
+            huluLink.addGestureRecognizer(huluGesture!)
+            huluLink.isUserInteractionEnabled = true
+        }
         
+        if movieInfo.primeLink == nil {
+            movieLink.arrangedSubviews[3].isHidden = true
+        } else {
+            primeGesture = UITapGestureRecognizer(target: self, action: #selector(MovieInfoViewController.primeTapped(gesture:)))
+            primeLink.addGestureRecognizer(primeGesture!)
+            primeLink.isUserInteractionEnabled = true
+        }
     }
     
     @objc func imdbTapped(gesture: UIGestureRecognizer) {
@@ -92,9 +102,9 @@ class MovieInfoViewController: UIViewController {
         }
     }
     
-    @objc func primeTapped(gesture: UIGestureRecognizer) {
+    @objc func netflixTapped(gesture: UIGestureRecognizer) {
         if (gesture.view as? UIImageView) != nil {
-            guard let url = URL(string: movieInfo.primeLink!) else {
+            guard let url = URL(string: movieInfo.netflixLink!) else {
                 return
             }
             let safariVC = SFSafariViewController(url: url)
@@ -102,9 +112,19 @@ class MovieInfoViewController: UIViewController {
         }
     }
     
-    @objc func netflixTapped(gesture: UIGestureRecognizer) {
+    @objc func huluTapped(gesture: UIGestureRecognizer) {
         if (gesture.view as? UIImageView) != nil {
-            guard let url = URL(string: movieInfo.netflixLink!) else {
+            guard let url = URL(string: movieInfo.huluLink!) else {
+                return
+            }
+            let safariVC = SFSafariViewController(url: url)
+            self.present(safariVC, animated: true, completion: nil)
+        }
+    }
+    
+    @objc func primeTapped(gesture: UIGestureRecognizer) {
+        if (gesture.view as? UIImageView) != nil {
+            guard let url = URL(string: movieInfo.primeLink!) else {
                 return
             }
             let safariVC = SFSafariViewController(url: url)

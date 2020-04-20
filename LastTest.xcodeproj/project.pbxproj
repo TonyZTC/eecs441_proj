@@ -43,7 +43,7 @@
 
 /* Begin PBXFileReference section */
 		7300A5B0240A38CB00ED43F6 /* MovieTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieTableViewCell.swift; sourceTree = "<group>"; };
-		739174E723D7E2AD0053DA56 /* LastTest.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LastTest.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		739174E723D7E2AD0053DA56 /* Streamability.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Streamability.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		739174EA23D7E2AD0053DA56 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		739174EC23D7E2AD0053DA56 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		739174F123D7E2AE0053DA56 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -103,7 +103,7 @@
 		739174E823D7E2AD0053DA56 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				739174E723D7E2AD0053DA56 /* LastTest.app */,
+				739174E723D7E2AD0053DA56 /* Streamability.app */,
 				739174FD23D7E2B10053DA56 /* LastTestTests.xctest */,
 				7391750823D7E2B10053DA56 /* LastTestUITests.xctest */,
 			);
@@ -166,7 +166,7 @@
 			);
 			name = LastTest;
 			productName = LastTest;
-			productReference = 739174E723D7E2AD0053DA56 /* LastTest.app */;
+			productReference = 739174E723D7E2AD0053DA56 /* Streamability.app */;
 			productType = "com.apple.product-type.application";
 		};
 		739174FC23D7E2B10053DA56 /* LastTestTests */ = {
@@ -465,12 +465,13 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 4KWXW94FU6;
 				INFOPLIST_FILE = LastTest/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.2;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = ZTC.LastTest;
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = Streamability;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -483,12 +484,13 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 4KWXW94FU6;
 				INFOPLIST_FILE = LastTest/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.2;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = ZTC.LastTest;
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = Streamability;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};

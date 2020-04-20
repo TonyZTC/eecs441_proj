@@ -22,6 +22,7 @@ class MovieTableViewCell: UITableViewCell {
         if tempImage != nil {
             moviePost.image = tempImage!
         }
+        movieName.numberOfLines = 2
         movieName.text = movieInfo.movieName
         movieRate.text = movieInfo.movieRate
     }
